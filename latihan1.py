@@ -39,4 +39,4 @@ print(data_set_2)
 data_dictionary = {'nama':'Ani', 'umur': 19}
 print(data_dictionary)
 
-print("This strings contains a singel quote (') character.")
+print("This strings contains a single quote (') character.")
