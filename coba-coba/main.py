@@ -11,11 +11,15 @@ def update_script():
     except FileNotFoundError:
         print("File update.sh tidak ditemukan.")
 
-def fungsi_lain():
+def upgrade_script():
     """Contoh fungsi lain."""
     try:
         subprocess.run(["sh", "upgrade.sh"], check=True)
-        pri
+        print("Script upgrade berhasil dijalankan")
+    except subprocess.CalledProcessError as e:
+        print(f"Script Error, {e}")
+    except FileNotFoundError:
+        print("file upgrade.sh tidak ditemukan/Cek permission")
 
 def fungsi_ketiga():
     """Contoh fungsi ketiga."""
@@ -25,19 +29,19 @@ def main():
     """Fungsi utama untuk memilih fungsi."""
     print("Pilih fungsi:")
     print("1. Jalankan update.sh")
-    print("2. Jalankan fungsi lain")
+    print("2. Jalankan Upgrade.sh")
     print("3. Jalankan fungsi ketiga")
 
     pilihan = input("Masukkan nomor pilihan: ")
 
     if pilihan == "1":
         update_script()
-    elif pilihan == "2":
-        fungsi_lain()
-    elif pilihan == "3":
+    if pilihan == "2":
+        upgrade_script()
+    if pilihan == "3":
         fungsi_ketiga()
     else:
-        print("Pilihan tidak valid.")
+        print("Jalankan ulang script untuk pilihan lainnya")
 
 if __name__ == "__main__":
     main()
