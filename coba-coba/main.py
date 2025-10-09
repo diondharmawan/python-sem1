@@ -30,9 +30,13 @@ def upgrade_script():
     except FileNotFoundError:
         print("file upgrade.sh tidak ditemukan/Cek permission")
 
-def fungsi_ketiga():
+def maintenance_script():
     """Contoh fungsi ketiga."""
-    print("Fungsi ketiga dijalankan.")
+    try:
+        subprocess.run(["sh", "maintenace.sh"], check=True)
+        print("Script maintenance.sh berhasil dijalankan.")
+    except subprocess.CalledProcessError as e:
+        print(f"Script error {e}")
 
 def main():
     """Fungsi utama untuk memilih fungsi."""
