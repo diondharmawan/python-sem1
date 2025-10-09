@@ -1,6 +1,15 @@
 import os
 import subprocess
 
+def cek_release():
+  try:
+    result = subprocess.run(["cat", "/etc/os-release"], capture_output=True, text=True, check=True)
+    print("Ini adalah informasi sistem")
+    print(result.stdout)
+  except subprocess.CalledProcessError as e:
+    print(f"Error menjalankan apt update: {e}")
+    print(e.stderr)
+
 def update_script():
     """Menjalankan script update.sh."""
     try:
@@ -27,11 +36,13 @@ def fungsi_ketiga():
 
 def main():
     """Fungsi utama untuk memilih fungsi."""
+    print("Daily Linux system maintenance")
+    print("works on ubuntu/Debian based")
     print("Pilih fungsi:")
     print("1. Jalankan update.sh")
     print("2. Jalankan Upgrade.sh")
     print("3. Jalankan fungsi ketiga")
-
+    cek_release()
     pilihan = input("Masukkan nomor pilihan: ")
 
     if pilihan == "1":
