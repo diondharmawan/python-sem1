@@ -28,7 +28,7 @@ desimal_b = 5
 biner_a = bin(desimal_a)
 biner_b = bin(desimal_b)
 
-# Penggunaan operator & | ^
+# Penggunaan operator & | ^ ~ << >>
 operator_and_desimal = desimal_a & desimal_b
 operator_and_biner = bin(operator_and_desimal)
 operator_or_desimal = desimal_a | desimal_b
