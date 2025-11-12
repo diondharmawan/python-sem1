@@ -1,7 +1,5 @@
-# crack_simple.py
 
 import re
-
 # Input password dari pengguna
 password = input("Masukkan password: ")
 
@@ -30,8 +28,8 @@ if not re.search(r"[!@#$%^&*]", password):
 
 # Output hasil validasi
 if alasan:
-    print("❌ Password tidak valid:")
+    print("Password tidak valid:")
     for a in alasan:
         print(a)
 else:
-    print("✅ Password valid")
+    print("Password valid")
